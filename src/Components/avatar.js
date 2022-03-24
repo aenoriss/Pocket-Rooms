@@ -20,13 +20,14 @@ export default function Avatar(props) {
         navigator.mediaDevices.getUserMedia({ video: true })
           .then(function (stream) {
             video.srcObject = stream;
+            console.log("success")
           })
           .catch(function (err0r) {
             console.log("Something went wrong!");
           });
       }
 
-    let videoTexture = new THREE.Texture( video );
+    let videoTexture = new THREE.Texture( video.srcObject );
 
     return (
         <group position={[0.01, 260, 0]}>
