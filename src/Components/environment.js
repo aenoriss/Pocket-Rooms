@@ -2,11 +2,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useThree } from '@react-three/fiber';
 
-export default function Environment(props) {
-    useThree(({camera}) => {
-        camera.position.set(0,300,0);
-      });
-    
+export default function Environment(props) {    
   const group = useRef();
   const { nodes, materials } = useGLTF("/island.glb");
   return (
