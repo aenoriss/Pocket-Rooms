@@ -22,12 +22,12 @@ export default function Avatar(props) {
             video.srcObject = stream;
             console.log("success")
           })
-          .catch(function (err0r) {
+          .catch(function (error) {
             console.log("Something went wrong!");
           });
       }
 
-    let videoTexture = new THREE.Texture( video.srcObject );
+    let videoTexture = new THREE.VideoTexture( video );
 
     return (
         <group position={[0.01, 260, 0]}>
