@@ -31,7 +31,7 @@ export default function Avatar(props) {
     return (
         <group position={[0.01, 260, 0]}>
             <Circle args={[8, 50]} position={[0, 23, 0]}>
-                <meshBasicMaterial attach="material" map={videoTexture} opacity={0.5} transparent/>
+                <meshBasicMaterial attach="material" map={videoTexture} opacity={0.5} />
             </Circle>
             <AvatarBody />
         </group>

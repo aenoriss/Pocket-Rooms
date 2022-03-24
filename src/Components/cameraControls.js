@@ -13,7 +13,7 @@ export default function CameraControls() {
     };
 
     useThree(({ camera }) => {
-        camera.position.set(0, 300, 0);
+        camera.position.set(0, 300, 50);
     });
 
     return (
