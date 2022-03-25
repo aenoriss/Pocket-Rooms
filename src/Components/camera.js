@@ -6,8 +6,6 @@ import { FlyControls, Sky, DeviceOrientationControls, PerspectiveCamera } from '
 
 export default function Camera(props) {
 
-    console.log("PROPS", props.position)
-
     return (
        null
     )
