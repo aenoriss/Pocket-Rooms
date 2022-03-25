@@ -10,9 +10,9 @@ import React, { Suspense, useRef } from "react";
 
 export default function Avatar(props) {
   return (
-    <PerspectiveCamera makeDefault={true} position={[0, 280, 0]}>
-      <Controller/>
+    <group>
+      <Controller />
       <AvatarBody position={[0, -20, 0]} />
-    </PerspectiveCamera>
+    </group>
   );
 }
