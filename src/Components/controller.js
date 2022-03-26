@@ -23,6 +23,6 @@ export default function Controller(props) {
 
     return (
         //Selects appropiate controls
-        checkDevice ? <DeviceOrientationControls makeDefault = {true} /> : <OrbitControls makeDefault={true} target ={props.orbiTarget} maxDistance={100} minPolarAngle={Math.PI * 0.4 } maxPolarAngle={0.5 * Math.PI }/>
+        checkDevice ? <DeviceOrientationControls makeDefault = {true} /> : <OrbitControls makeDefault={true} target ={props.orbiTarget} minDistance={100} maxDistance={1000} minPolarAngle={Math.PI * 0.4 } maxPolarAngle={0.5 * Math.PI }/>
     )
 }

@@ -16,7 +16,6 @@ function App() {
       <Canvas>
 
         <Suspense fallback={null}>
-          <PerspectiveCamera makeDefault={true} position={[0, 1000, 0]} />
           <Avatar />
           <Environment />
           <ambientLight />

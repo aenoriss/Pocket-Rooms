@@ -7,13 +7,16 @@ import AvatarHead from "./avatarHead";
 import Controller from './controller';
 import React, { useState, useEffect } from "react";
 import { useThree, useFrame } from '@react-three/fiber';
-
+import { PerspectiveCamera } from '@react-three/drei'
 
 export default function Avatar(props) {
 
   useFrame((state, delta) => {
     // This function runs at the native refresh rate inside of a shared render-loop
-    state.controls.target = state.scene.children[1].position
+    if(state.controls != null){
+      // state.controls.target = 
+      console.log("track", state.scene.getObjectByName("player"))
+    } 
     // console.log("pointer", state.events.handlers.onClick())
   })
 
@@ -22,6 +25,7 @@ export default function Avatar(props) {
     <group name="player" position={[0, 280, 0]}>
       <AvatarBody position={[0, 0, 0]} />
       <AvatarHead position={[0, 25, 0]} />
+      <PerspectiveCamera makeDefault={true} position={[0, 30, 0]} />
       <Controller/>
     </group>
 
