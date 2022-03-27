@@ -35,6 +35,23 @@
   color: #61dafb;
 }
 
+.content {
+  width: 3800px;
+  height: 2200px;
+  background: black;
+  border-radius: 3px;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.wrapper {
+  padding: 10px;
+  width: 8000px;
+  height:4500px;
+  transform: scale(0.5);
+  transform-origin: top left;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
