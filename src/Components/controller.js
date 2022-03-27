@@ -1,14 +1,17 @@
 import ReactDOM from 'react-dom';
 import React, { useRef, useState,useEffect } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Sky, DeviceOrientationControls, PerspectiveCamera, FlyControls,OrbitControls } from '@react-three/drei'
+import { Sky, DeviceOrientationControls, PerspectiveCamera, FlyControls,PointerLockControls  } from '@react-three/drei'
 import * as THREE from 'three';
+import { STATE } from 'three-stdlib';
 
 
 export default function Controller(props) {
 
     const [checkDevice, setCheckDevice] = useState()
+    const state = useThree()
 
+    console.log(state, "jajja")
     //Detects user device
     useEffect(() => {
         window.mobileAndTabletCheck = function() {
@@ -23,6 +26,6 @@ export default function Controller(props) {
 
     return (
         //Selects appropiate controls
-        checkDevice ? <DeviceOrientationControls makeDefault = {true} /> : <OrbitControls makeDefault={true} target ={props.orbiTarget} minDistance={100} maxDistance={1000} minPolarAngle={Math.PI * 0.4 } maxPolarAngle={0.5 * Math.PI }/>
+        checkDevice ? <DeviceOrientationControls makeDefault = {true} /> : <PointerLockControls  makeDefault={true} camera={state.scene.getObjectByName("mainCamera")} />
     )
 }
