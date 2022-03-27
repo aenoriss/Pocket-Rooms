@@ -9,6 +9,7 @@ import { useThree, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera } from '@react-three/drei'
 
 export default function Avatar(props) {
+ 
 
   useThree((state) => {
     //Initial camera position
@@ -37,8 +38,8 @@ export default function Avatar(props) {
     // state.scene.children[0].position.set(camPos["x"], playerPos["y"] + 20 ,camPos["z"]);
     const updatedValue = playerPos["y"] + 20
 
-    state.camera.position.set(playerPos["x"], updatedValue , playerPos["z"])
-    console.log(playerPos)
+    state.camera.position.set(playerPos["x"], updatedValue, playerPos["z"])
+    // console.log(playerPos)
 
     // state.scene.children[0].rotation.set(0,10,0)
 

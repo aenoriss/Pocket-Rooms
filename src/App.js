@@ -11,10 +11,36 @@ import Controller from '../src/Components/controller';
 
 function App() {
 
-  return (
-    <div className="App">
+  document.addEventListener("click", handleStart, true);
+  document.addEventListener("ontouchstart", handleStart, true);
 
-      <Canvas>
+  function handleStart(){
+    let element = document.getElementById("canvas");
+
+    element.requestFullscreen()
+    .then(function () {
+      // element has entered fullscreen mode successfully
+    })
+    .catch(function (error) {
+      // element could not enter fullscreen mode
+      // error message
+      console.log(error.message);
+    });
+  }
+
+  window.screen.orientation.onchange = function() {
+
+    if (this.type.startsWith('landscape')) {
+      console.log("xDDDD")
+      document.documentElement.webkitRequestFullscreen();
+    } else {
+      document.webkitExitFullscreen();
+    }
+
+};
+  return (
+    <div className="App"> 
+      <Canvas id="canvas">
         <Suspense fallback={null}>
           <Avatar />
           <Controller />
